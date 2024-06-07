@@ -414,3 +414,15 @@ h2::after {
   top: -10px;
   right: -25px;
 }
+
+/*Float Layouts*/
+.author-img {
+  float: left; /*text in paragraph will float around the image!*/
+  margin-bottom: 20px;
+}
+
+.author {
+  float: left;
+  margin-top: 10px;
+  margin-left: 20px;
+}
