@@ -428,7 +428,7 @@ h2::after {
 }
 
 h1 {
-  float: left;
+  float: left; /*but now, we lose the height of our background and that's because of the float property!*/
 }
 
 nav {
