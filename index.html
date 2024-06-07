@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>The Basic Language of the Web: HTML</title>
+
+    <!-- Internal CSS: we come to the head and start with style: we decouple style from actual HTML element and place it in head section:-->
+    <!-- <style>
+      h1 {
+        color: blue;
+      }
+    </style> -->
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="main-header">
+        <!-- Inline CSS -->
+        <!-- <h1 style="color: blue">📘 The Code Magazine</h1> -->
+        <h1>📘 The Code Magazine</h1>
+
+        <nav>
+          <!-- <strong>This is the navigation!</strong> -->
+          <a href="./Blog.html">Blog</a>
+          <a href="./Challenges.html">Challenges</a>
+          <a href="./Flexbox.html">Flexbox</a>
+          <a href="./CSS_Grid.html">CSS Grid</a>
+          <a href="#">points only to the top of the current Page!</a>
+        </nav>
+      </header>
+
+      <article>
+        <!-- <p>TEST</p> -->
+        <header class="post-header">
+          <h2>The Basic Language of the Web: HTML</h2>
+
+          <img
+            src="./img/laura-jones.jpg"
+            width="50"
+            height="50"
+            alt="Headshot of Laura Jones"
+          />
+
+          <p id="author">
+            Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027
+          </p>
+
+          <img
+            src="./img/post-img.jpg"
+            width="500"
+            height="200"
+            alt="HTML code on a screen"
+            class="post-img"
+          />
+        </header>
+        <p>
+          All modern websites and web applications are built using three
+          <em>fundamental</em>
+          technologies: HTML, CSS and JavaScript. These are the languages of the
+          web.
+        </p>
+
+        <p>
+          In this post, let's focus on HTML. We will learn what HTML is all
+          about, and why you too should learn it.
+        </p>
+
+        <h3>What is HTML?</h3>
+
+        <p>
+          HTML stands for <strong>H</strong>yper<strong>T</strong>ext
+          <strong>M</strong>arkup <strong>L</strong>anguage. It's a markup
+          language that web developers use to structure and describe the content
+          of a webpage (not a programming language).
+        </p>
+
+        <p>
+          HTML consists of elements that describe different types of content:
+          paragraphs, links, headings, images, video, etc. Web browsers
+          understand HTML and render HTML code as websites.
+        </p>
+
+        <p>In HTML, each element is made up of 3 parts:</p>
+
+        <!-- ol: ordered list => gives us every item in this list with a number! -->
+        <ol>
+          <li class="first-li">The opening tag</li>
+          <li>The closing tag</li>
+          <li>The actual element</li>
+        </ol>
+
+        <!-- ul: unordered list => gives us every item in this list with a bullet point! -->
+        <ul>
+          <li>The opening tag</li>
+          <li>The closing tag</li>
+          <li>The actual element</li>
+        </ul>
+
+        <p>
+          You can learn more at the
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+            target="_blank"
+            >MDN Web Docs</a
+          >
+        </p>
+        <!-- <a>link without href</a> -->
+        <h3>Why Should you learn HTML?</h3>
+
+        <p>
+          There are countless reasons for learning the fundamental language of
+          the web. Here are 5 of them:
+        </p>
+
+        <!-- ul: unordered list => gives us every item in this list with a bullet point! -->
+        <ul>
+          <li class="first-li">
+            To be able to use the fundamental web dev language
+          </li>
+          <li>
+            To hand-craft beautiful websites instead of relying on tools like
+            Wordpress or Wix
+          </li>
+          <li>To build web applications</li>
+          <li>To impress friends</li>
+          <li>To have fun 😃</li>
+        </ul>
+
+        <p>Hopefully you learned something new here. See you next time!</p>
+      </article>
+
+      <aside>
+        <h4>Related posts</h4>
+        <ul class="related-posts">
+          <li>
+            <img
+              src="./img/related-1.jpg"
+              width="75"
+              height="75"
+              alt="Web development"
+            />
+            <a href="#">How to Learn Web Development</a>
+            <p class="related-author">By Jonas Schmedtmann</p>
+          </li>
+          <li>
+            <img
+              src="./img/related-2.jpg"
+              width="75"
+              height="75"
+              alt="Power of CSS"
+            />
+            <a href="#">The unknown Powers of CSS</a>
+            <p class="related-author">By Jim Dillon</p>
+          </li>
+          <li>
+            <img
+              src="./img/related-3.jpg"
+              width="75"
+              height="75"
+              alt="JavaScript"
+            />
+            <a href="#">Why JavaScript is Awesome</a>
+            <p class="related-author">By Matilda</p>
+          </li>
+        </ul>
+      </aside>
+      <footer>
+        <p id="copyright" class="copyright text">
+          Copyright &copy; 2024 by Maximilian Karimi
+        </p>
+      </footer>
+    </div>
+
+    <!-- NOTE: TO TEST ABSOLUE AND RELATIVE POSITIONS: -->
+    <!-- Default position is relative which means is in flow and laid out according to its order after all other elements in HTML-->
+    <button>❤️Like</button>
+  </body>
+</html>

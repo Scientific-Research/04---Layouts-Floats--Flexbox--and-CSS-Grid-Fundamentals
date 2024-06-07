@@ -1,0 +1,416 @@
+/* NOTE: TO QUICKLY RECAP:
+whenever you need some space inside of an element, which is very useful mostly, when there is a backgound color or a border on the element => then you always use PADDING.
+
+ON THE OTHER HAND: in order to create space outside of an element, or also to create space between 
+multiple elements, always use MARGIN.
+
+AND IN CASE THAT, you need to add vertical space, then i advise you to most of the time, stick to 
+MARGIN-BOTTOM
+*/
+
+/* but at th end, when we have 500 line of CSS code, it is not a good idea to put all of them in head section and in index.html, that's why we define a separate CSS file as style.css => SEPARATION OF CONCERN*/
+
+/*Universal Selector but it doesn't get inherited! 
+WE PUT THE ELEMENTS HERE THAT WE WANT TO APPLY TO ALL OUR COMPONENTS; AND IT DOESN'T RELATED TO THE INHERITANCE ISSUE*/
+* {
+  /* border-top: 10px solid #1098ad; and now all the elments get this CSS property and we see above all of them a border - it dpesn't look good but only as an example - In inheritance this doesn't work as we saw in below example in body{} - This has the lowest Priority and we can overwrite it easily! */
+  /*NOTE: to remove all the default paddings and margins => GLOBAL RESET FOR ALL DEFAULT VALUES: => IT HAS LOWEST PRIORITY*/
+  margin: 0;
+  padding: 0;
+}
+
+/*body element is the parent element of all other elements as children in our Program and all these elements as children inherit from body as parent element!*/
+/*IN BODY WE PUT THE PROPERTIES FOR THE ELEMENTS WHICH GET INHERITED AND NOT ALL THE ELEMENTS1*/
+body {
+  /* background-color: rgb(214, 203, 203); */
+  /* color: red; */
+  color: #444; /*this color will be inherited by other elements which don't have its own color!*/
+  font-family: sans-serif; /*this font-family will be inherited by other elements which don't have its own font-family! - This has more priority than universal selector!*/
+
+  /*but not every element here will be inherited by children elements below in the body like:*/
+  /* NOTE: border-top: 10px solid #red; this makes only a border top foremost top of the website and not for every element in body as children, otherwise, it would be impractical! */
+
+  /* NOTE: after defining these two below items, the button will stay at view port and not at the bottom of the page, where we want to be. when we want to have the button at the bottom of the page, we have to define a new position as relative in body, because we want to see the position of the button in relation to the whole body and not view port!, for this, we have to go to the body above and declare the position there as relative.
+
+  THIS MEANS THAT I WANT TO HAVE THE POSITION OF THE BUTTON TO STAY ABSOLUTE AT THE BUTTOM OF THE PAGE IN RELATION TO THE WHOLE PAGE WHICH STAY RELATIVE TO THE BUTTON!
+
+  and now, when we change the page size like what we do to test the responsiveness of the pages, the position of the button will not chnage and stays always at the same position, because its position is ABSOLUTE!
+  */
+  position: relative;
+}
+
+/* h1,
+h2,
+h3,
+h4,
+p,
+li { */
+/* font-family: sans-serif; serif is default */
+/* color: #444; is short form of color: #444444 => this is the grey color because all the three RGB colors have the same values => 44 44 44 and the h1,h2,h3 will be overwritten by the following color! */
+/* } */
+
+.container {
+  width: 800px;
+  /* align-items: center; */
+  /*NOTE: HOW TO CENTER OUR ELEMENTS IN A PAGE: when both margin are the same, it means the browser will calculate automatically margin-left and margin-right and the content of the page will be centered, because the right and left margins have the same values!*/
+  /* margin-left: auto;
+  margin-right: auto; */
+  /* margin-right: 100px; */
+  /*OR: folowing form is more handy:*/
+  margin: 0 auto; /* up and down have the 0 margins - right and left have the auto margins!*/
+}
+
+.main-header {
+  background-color: #f7f7f7; /* a nice grey color for background!*/
+  /* padding: 20px;
+  padding-right: 40px;
+  padding-left: 40px; */
+  /* top right bottom left*/
+  /* padding: 20px 40px 20px 40px; */
+  padding: 20px 40px; /*top and bottom - right and left*/
+
+  /* margin between above header with calss => main-header and the bottom component using margin-bottom:20px*/
+  margin-bottom: 60px;
+  /* height: 80px; the real height is 80px + two times padding => 80px + 20px top + 20px bottom => 120px is the real height! */
+}
+
+/*all elements in nav as children will get inherited from nav => font-size of strong and a would be 18px*/
+nav {
+  font-size: 18px;
+  text-align: center; /* to bring the li elements in center of the nav, we have to apply this statement: text-align: center; to the parent of the li elements => nav element! => because nav is a block element. if we apply that to the li elements, it will not work! because it is a inline-block element and not a block element!  */
+}
+
+nav a:link {
+  /* background-color: orangered;
+    margin: 20px;
+    padding: 20px;
+    display: block; */
+  /* NOTE: a is an inline element as default => we don't need to mention this: display:inline, that's why only right and left paddings and margins work and not top and bottom. when i want to use top and bottom for margin and padding, I have to use inline-block for display => display: inline-block */
+  display: inline-block;
+  margin-right: 30px;
+  margin-top: 10px;
+  /* text-align: center; to bring the li elements in center of the nav, we have to apply this statement: text-align: center; to the parent of the li elements => nav element! => because nav is a block element. if we apply that to the li elements, it will not work! because it is a inline-block element and not a block element!  */
+}
+
+nav a:link:last-child {
+  margin-right: 0; /* margin-right for all elements but not for last child*/
+}
+
+/*the big margin(distance) between article and aside*/
+article {
+  margin-bottom: 60px;
+}
+
+/*margin between black iamge full of code and its below text!*/
+.post-header {
+  margin-bottom: 40px;
+}
+
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  width: 500px;
+  /* padding-top: 50px;
+  padding-bottom: 50px; */
+  padding: 50px 0;
+}
+
+h1,
+h2,
+h3 {
+  color: #1098ad;
+}
+
+h1 {
+  /* color: blue; */
+  font-size: 26px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 40px; /* NOTE: 40px here doesn't add with 15px below in p => margin-bottom: 15px; 
+  This Phenomena is called => collapsing margins: when there are two margins occupying the same space, only one of them is visible on the page which is the bigger value => here it would be margin-top: 40px; and not margin-bottom: 15px; => the bigger one always will win!*/
+}
+
+h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p {
+  font-size: 22px;
+  line-height: 1.5; /* the space between the lines for every paragraph. By default, it is 1*/
+  margin-bottom: 15px;
+  /* display: inline; */
+}
+
+/* because of global RESET, we lose the bullet and numbers for ordered and unordered lists, that's why we use margin-left to display them again!*/
+ul,
+ol {
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+
+li {
+  font-size: 20px; /* default is 16px*/
+  margin-bottom: 10px;
+  /* display: inline; */
+}
+
+/*margin-bottom:10px for all li but not for the last one!*/
+/*using this one*/
+li:last-child {
+  margin-bottom: 0;
+}
+/*OR this one: with this one, we have to remove the margin-bottom: 10px;
+ from above li*/
+/* li:not(:last-child) {
+  margin-bottom: 10px;
+} */
+
+/*All the paragraphs only in footer get the font-size of 16px and not all the paragraphs in the code! => This is called: Descendant Selector*/
+/* footer p {
+  font-size: 16px;
+} */
+
+/* Instead of using above nested descendant Selector, I use id and it is simpler and easier to understand! */
+#copyright {
+  font-size: 16px;
+}
+
+/* Uisng a nested descendant Selector => using article in addition to the header and p: only paragraph inside the header and header inside the article would be italic*/
+/* article header p {
+  font-style: italic;
+} */
+
+/* Instead of using above nested descendant Selector, I use id and it is simpler and easier to understand! */
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.related-posts {
+  /* it removes the bullet(filled circle) from every item! */
+  list-style: none;
+}
+
+/* .first-li {
+  font-weight: bold;
+} */
+
+/* the above CSS command and the below CSS command have the same result, but below we are using Pseudo-classes which beginns always with colon : and it works when we have the child-parent relationship =>  */
+/* li:nth-child(1) {
+  font-weight: bold;
+} */
+/*OR*/
+li:first-child {
+  font-weight: bold;
+}
+
+li:last-child {
+  font-style: italic;
+}
+
+/* li:nth-child(2) {
+  color: red;
+} */
+
+/* Only odd elements(children)
+li:nth-child(odd) {
+  color: red;
+} */
+
+/* Only even elements(children)
+li:nth-child(even) {
+  color: red;
+} */
+
+/* NOTE: nth-child doesn't work well when we don't have the same Children like li in ol and ul, but here we have different children like p, heade, h2, img, that's why it doesn't work as expected here! */
+/* article p:nth-child(3) {
+  background-color: blue;
+} */
+/* when i remove the <p>TEST</p> in HTML, following Pseudo class will not work => Misconception because there is no paragraph (p) there anymore(I commented already p there! )*/
+article p:first-child {
+  color: red;
+}
+
+article p:first-child {
+  color: red;
+  font-weight: bold;
+}
+
+article p:last-child {
+  color: green;
+  font-weight: bold;
+}
+
+/* Styling links */
+/* the a without href */
+a {
+  color: red;
+}
+
+/* the a with href => Pseudo class => link*/
+a:link {
+  color: #1098ad;
+  text-decoration: none; /* the links without underline => without decoration*/
+}
+
+/* for the website which were already visited!*/
+a:visited {
+  /* color: #777; */
+  color: #1098ad;
+}
+
+/*to change the color, font-weight and text-decoration of link, when we hover by mouse:*/
+a:hover {
+  color: orangered;
+  font-weight: bold;
+  /* text-decoration: underline dotted orange; */
+  /* text-decoration: underline wavy orange; */
+  text-decoration: underline orange;
+}
+
+/* it changes the background color and font-style during clicking the link and when we release the mouse, it goes away!*/
+a:active {
+  background-color: black;
+  font-style: italic;
+}
+
+/* NOTE: the sequence for this four Pseudo classes are: LVHA => link - visited - hover - active*/
+
+/* Resolving conflicts*/
+
+/* id has highest Priority*/
+#copyright {
+  color: red;
+}
+
+/* these two below classes have the same Priority but the last one will be applied when there is no id with highest priority!*/
+.copyright {
+  color: blue;
+}
+
+.text {
+  color: yellow;
+}
+
+/* this descendant nested p has the lowest Priority - when other three classes don't exist, this element comes into play*/
+footer p {
+  /* color: green !important; this will lowest priority becomes one with highest priority with  !important */
+  color: green;
+}
+
+/* nav a:link,
+p {
+  font-size: 18px;
+} */
+
+.post-img {
+  /*NOTE: Images are inline elements but behave like an inline-block element:*/
+  /* margin-top: 100px;
+  margin-bottom: 100px; */
+  /* NOTE: it can not be happened because in inline elements paddings and margins are applied only horizontally(left and right) and not top and bottom, BUT IT HAPPENS and we see that the image has margin-top and margin-bottom for 100px now. and also we can not apply height and width for an inline element, but here we have applied both width:100% and height:auto - WHY ALL OF THESE ARE POSSIBLE? because AN IMAGE ELEMENT BEHAVE LINE AN INLINE BLOCK ELEMENT, ALTHOUGH IT IS CATEGORIZED IN INLINE ELEMENT CATEGORY! => IT IS NOT A PURE INLINE ELEMENT!*/
+
+  /* width: 800px; overwrite the original value: width="500" */
+
+  /*NOTE: the percentage is the percentage of the width of the parent element and the parent element of the post-image is header and the width of the header is the width of the entire page: that's why the width of post-img takes all the width of the page!
+
+  // NOTE: when i chnage the width of the page as parent element, the width of the iamge adapt itself and it will be stay always 100% of the current width of the page*/
+  width: 100%; /*overwrite the original value: width="500"*/
+
+  /* NOTE: when i make the width of the page as parent element of post-image smaller or bigger , it adapt itself too and will stay always 50% of the current width of the page! and this is very useful feature for the responsive page topic in the future 
+  RESPONSIVE PAGES: are the pages which adapt itself with the current with of the screen!*/
+  /* width: 50%; overwrite the original value: width="500" */
+
+  height: auto; /*overwrite the original value: height="200"*/
+}
+
+button {
+  font-size: 22px;
+  padding: 20px;
+  cursor: pointer;
+
+  /* Position: relative is default */
+  position: absolute;
+  /* and now for position: absolute, we define top, bottom, left and right */
+  /* top: 50px;
+  left: 50px; */
+
+  /* NOTE: after defining these two below items, the button will stay at view port and not at the bottom of the page, where we want to be. when we want to have the button at the bottom of the page, we have to define a new position as relative in body, because we want to see the position of the button in relation to the whole body and not view port!, for this, we have to go to the body above and declare the position there as relative.
+
+  THIS MEANS THAT I WANT TO HAVE THE POSITION OF THE BUTTON TO STAY ABSOLUTE AT THE BUTTOM OF THE PAGE IN RELATION TO THE WHOLE PAGE WHICH STAY RELATIVE TO THE BUTTON!
+
+  and now, when we change the page size like what we do to test the responsiveness of the pages, the position of the button will not chnage and stays always at the same position, because its position is ABSOLUTE!
+
+  // NOTE: AS AN EXTRA NOTE:
+  when we have two parent elements like body and header and the header is inside the body and the button is inside the header which is inside the body, and this statement => position:relative is in both of those header and body, in this case, the parent would be FIRST and NEAREST one to the button, which is in our case, would be header and not body! that's why the button will jump to the header element position which is 50px bottom and right of its position!
+  */
+  bottom: 50px;
+  right: 50px;
+}
+
+/* NOTE: using Pseudo element with double colon - Attention => Pseudo class has only one colon. 
+using Pseudo element, we can target exactly one sub-element or one letter inside a word! that's why it called Pseudo element which is not exactly an element, rather is a part of an element and is similar to an element!! 
+it is like a Point missile which hit the exact point in a region!*/
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
+h2::first-letter {
+  /* font-size: 80px; */
+}
+
+/* p::first-line {
+  color: red;
+} */
+
+/* + sign means Adjacent sibling selector => in this case, only the first line of the paragraph which comes immediately after h3 will be red, in other words, the paragraph which is the neighbourhood after h3 will be red!*/
+h3 + p::first-line {
+  color: red;
+}
+
+/*Now, we want to put a TOP label besides h2 element which is => The Basic Language of the Web:HTML , How can we do that? we can do it in html, but also we can use AFTER Pseudo element which is a feature in CSS, without creating a HTML element.*/
+
+h2 {
+  /* background-color: orange; */
+  position: relative; /* h2 is the nearest parent of TOP Pseudo element, that's why we have to put the position: relative here in h2. When i forget to write position: relative; here, the TOP sign will jump to the top-right of the page, because in this case, the parent element would be body and not h2 more! In order to have a correct absolute positioning of our element, we have to determine our nearest parent and then write this statement there: position: relative;   */
+}
+
+/* h2::before { it looks exactly the same 
+but the DIFFERENCE between h2::before and h2::after => 
+::after will become the very last child element of the one we are selecting here!
+::before will become the very first child element of the one we are selecting here! */
+h2::after {
+  /* It is mandatory to define the content, even without initial value, although we declared it here as TOP! */
+  content: "TOP";
+  background-color: #ffe70e;
+  color: #444;
+  font-size: 16px;
+  font-weight: bold;
+  /* by default, any Pseudo element is an inline element. but the problem with an inline element is that: we can not apply heights and widths and also we can not apply top and bottom margins&paddings and we can only apply margins&paddings right and left. The solution is that => we have to chnage the display from default as inline to inline-block in order to apply requested changes! */
+  display: inline-block;
+  padding: 5px 10px; /* 5px for both top and bottom - 10px for both sides right and left*/
+  /*In order to put the TOP sign above and at the right side of the h2 element, we have to use absolute positioning and for that, we have to determine a nearest parent which is h2 here, that's why i wrote position:relative above in h2*/
+  position: absolute;
+  /* right: -20px; */
+  /*Negative length bring the position to the right foremost and to the top foremost!*/
+  top: -10px;
+  right: -25px;
+}
