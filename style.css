@@ -437,6 +437,17 @@ nav {
 
 .clear {
   /* padding: 20px; */
-  /*we have above both left and right float and it makes our background smaller. To prevent that, and still keep effects of float which is to have the nav elements around h1 element, we use clear property below and set it to the both because we have both right and left for float!*/
+  /*we have above both left and right float and it makes our background smaller. To prevent that, and still keep effects of float which is to have the nav elements around h1 element, we use clear property below and set it to the both because we have both right and left for float!
+  FLOAT IS ALREADY OUTDATED!*/
   clear: both;
+}
+
+/*HOW TO CLEAR FLOAT IN FLOAT LAYOUTS USING CLEARFIX CLASS HACK:*/
+/*we use clearfix as a substitution solution to avoid writing an empty div like this: <div class="clear"></div>
+::after as Pseudo element will create an new element which is the last child element of the container, this does the empty div as last child element for us automatically without to write this empty div there manually! that's why i commented already this empty div in html out!  */
+.clearfix::after {
+  clear: both;
+  content: ""; /*we have to write something here for content even if it is an empty text!*/
+  /*Pseudo element like before and after are inline element but clearing Float only works when it is an block element, that's why we have to change its default display as inline to block!*/
+  display: block;
 }
