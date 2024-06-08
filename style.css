@@ -453,13 +453,13 @@ nav {
 }
 
 article {
-  background-color: green;
-  width: 900px;
+  /* background-color: green; */
+  width: 825px; /*i changed it from 900px to 825px to make a 75px gap between article and aside. Now, when i change the float in aside from right to left, the aside will float around the article to the left and when we keep it as it is now => right, it will stay at right position!*/
   float: left;
 }
 
 aside {
-  background-color: red;
+  /* background-color: red; */
   width: 200px;
   /* margin-left: 50px; */
   float: right;
@@ -467,7 +467,7 @@ aside {
 
 /*we don't need now to create a new empty div or use a clearfix class like what we did already, we can add all the above parameters or just one parameter => clear: both; simply in footer, because footer is the element on which we want to clear the float and it is already available there! => we don't want that footer floats around the aside element to the top and right side, rather, we want that it stays in its place in the footer, so, we need to clear its float feature, therefore, we add only clear: both; to footer*/
 footer {
-  background-color: yellow;
+  /* background-color: yellow; */
   clear: both;
   /* content: ""; */
   /* display: block; */
