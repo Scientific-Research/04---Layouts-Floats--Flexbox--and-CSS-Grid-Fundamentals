@@ -434,3 +434,9 @@ h1 {
 nav {
   float: right;
 }
+
+.clear {
+  /* padding: 20px; */
+  /*we have above both left and right float and it makes our background smaller. To prevent that, and still keep effects of float which is to have the nav elements around h1 element, we use clear property below and set it to the both because we have both right and left for float!*/
+  clear: both;
+}
