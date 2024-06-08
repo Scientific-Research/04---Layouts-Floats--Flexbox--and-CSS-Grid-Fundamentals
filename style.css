@@ -50,7 +50,7 @@ li { */
 /* } */
 
 .container {
-  width: 800px;
+  width: 1100px;
   /* align-items: center; */
   /*NOTE: HOW TO CENTER OUR ELEMENTS IN A PAGE: when both margin are the same, it means the browser will calculate automatically margin-left and margin-right and the content of the page will be centered, because the right and left margins have the same values!*/
   /* margin-left: auto;
