@@ -15,8 +15,13 @@ WE PUT THE ELEMENTS HERE THAT WE WANT TO APPLY TO ALL OUR COMPONENTS; AND IT DOE
 * {
   /* border-top: 10px solid #1098ad; and now all the elments get this CSS property and we see above all of them a border - it dpesn't look good but only as an example - In inheritance this doesn't work as we saw in below example in body{} - This has the lowest Priority and we can overwrite it easily! */
   /*NOTE: to remove all the default paddings and margins => GLOBAL RESET FOR ALL DEFAULT VALUES: => IT HAS LOWEST PRIORITY*/
+
+  /*DON'T FORGET GLOBAL RESET WITH THESE FOLLOWING THREE PARAMETERS - ALWAYS WRITE THEM:*/
   margin: 0;
   padding: 0;
+  /*with box-sizing: border-box; what we give as padding, this padding will be deducted from total width and 
+  real width: total width - padding in both sides!*/
+  box-sizing: border-box;
 }
 
 /*body element is the parent element of all other elements as children in our Program and all these elements as children inherit from body as parent element!*/
@@ -113,7 +118,7 @@ aside {
   /* width: 500px; */
   /* padding-top: 50px;
   padding-bottom: 50px; */
-  padding: 50px 30px;
+  padding: 50px 40px;
 }
 
 h1,
@@ -461,7 +466,7 @@ article {
 
 aside {
   /* background-color: red; */
-  width: 200px;
+  width: 300px;
   /* margin-left: 50px; */
   float: right;
 }
